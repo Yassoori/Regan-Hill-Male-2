@@ -284,8 +284,10 @@ nav .left-nav #hamburger-container button {
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
   gap: 1em;
 }
 
@@ -293,6 +295,7 @@ nav .left-nav #hamburger-container button {
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .project-card img {
   z-index: 1;
@@ -497,11 +500,20 @@ nav .left-nav #hamburger-container button {
   .gallery-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 1em;
   }
   .project-card {
     position: relative;
-    display: flex;
-    height: 30vh;
+  }
+  .project-card:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+  .project-card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
   #contact-page {
     display: flex;

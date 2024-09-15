@@ -124,6 +124,8 @@
   .gallery-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding: 1em;
+
 
     // display: flex;
     // flex-direction: row;
@@ -132,11 +134,29 @@
 
   // ------------------------ Cards ------------------------
   
+  // .project-card {
+  //   position: relative;
+  //   display: flex;
+  //   // width: 44%;
+  //   height: 30vh;
+  // }
+
+  // square
   .project-card {
     position: relative;
-    display: flex;
-    // width: 44%;
-    height: 30vh;
+    // width: 50%;
+  }
+  
+  .project-card:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+  }
+  
+  .project-card img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 
   // .project-card:hover {

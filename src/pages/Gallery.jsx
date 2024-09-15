@@ -126,13 +126,13 @@ const Gallery = () => {
           data-aos-offset="50"
           data-set-delay="1000"
         >
-          {/* <div className="card-text">
+          <div className="card-text">
             <h3 className="card-heading">{project.title.rendered}</h3>
             <div
               dangerouslySetInnerHTML={{ __html: project.excerpt.rendered }}
               className="card-body"
             />
-          </div> */}
+          </div>
           <img
             src={getFeaturedImage(project)}
             alt={project.title.rendered}
@@ -235,6 +235,7 @@ const Gallery = () => {
           ) : (
             <Projects projects={filteredProjects || projects} />
           )}
+          <a href="" className="project-card last-card"></a>
         </div>
       </div>
     </>

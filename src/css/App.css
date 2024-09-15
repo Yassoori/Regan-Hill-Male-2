@@ -284,15 +284,18 @@ nav .left-nav #hamburger-container button {
 }
 
 .gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .project-card {
   position: relative;
   display: flex;
   flex-direction: column;
+  margin: 1em;
+  margin-bottom: 2em;
 }
 .project-card img {
   z-index: 1;
@@ -303,6 +306,7 @@ nav .left-nav #hamburger-container button {
      object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: 12px;
   background-color: transparent;
   -o-object-position: center center;
      object-position: center center;
@@ -495,13 +499,24 @@ nav .left-nav #hamburger-container button {
     flex-direction: column;
   }
   .gallery-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
   }
   .project-card {
     position: relative;
     display: flex;
-    height: 30vh;
+    flex-grow: 1;
+    width: 45%;
+  }
+  .project-card img {
+    max-height: 100%;
+    min-width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    vertical-align: bottom;
+  }
+  .last-card {
+    flex-grow: 10;
   }
   #contact-page {
     display: flex;

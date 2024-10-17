@@ -5,9 +5,13 @@
     font-size: $h1-size-tablet;
   }
 
-  h3,
-  h2 {
+  h2,
+  h3 {
     font-size: $sub-size;
+  }
+
+  h4 {
+    font-size: $body-size;
   }
 
   a,

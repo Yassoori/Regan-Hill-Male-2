@@ -1,7 +1,6 @@
 // ------------------------ General ------------------------
 
-h1,
-h4 {
+h1 {
   font-size: $h1-size-big-mob;
 }
 
@@ -18,6 +17,11 @@ h2 {
 .card-body p,
 h3 {
   font-size: $mob-sub-size;
+}
+
+h4 {
+  font-size: $mob-body-size;
+  font-style: italic;
 }
 
 a,
@@ -86,12 +90,6 @@ button {
   }
 }
 
-// figure {
-//   img {
-//     border-radius: $med-margin;
-//   }
-// }
-
 .full-container {
   padding: $small-margin;
   position: relative;
@@ -121,8 +119,20 @@ button {
   transition: 1s;
 }
 
-#about-page, #project-page {
-margin-top: $big-margin;
+#about-page,
+#project-page {
+  margin-top: $big-margin;
+}
+
+.highlight {
+  padding: $med-margin;
+  margin-bottom: $big-margin;
+  border-radius: $med-margin;
+
+  p,
+  h2 {
+    margin-bottom: $med-margin;
+  }
 }
 
 // ------------------------ Header ------------------------
@@ -281,8 +291,8 @@ figure {
   justify-content: center;
   // padding: 12px;
 
-  img{
-    border-radius: 6px;
+  img {
+    border-radius: $med-margin;
     // -o-object-fit: contain;
     // object-fit: contain;
     overflow: hidden;
@@ -309,6 +319,7 @@ figure {
   // display: grid;
   // grid-template-columns: 1fr;
   // gap: 1em;
+
 }
 
 // ------------------------ Cards ------------------------
@@ -404,7 +415,8 @@ figure {
 //   }
 // }
 
-#Bio, #Testimonials {
+#Bio,
+#Testimonials {
   display: grid;
   grid-template-areas: "img" "text";
   // grid-template-columns: repeat(2,minmax(0,1fr));
@@ -413,14 +425,17 @@ figure {
   margin-bottom: $big-margin;
   border-radius: $med-margin;
 
-  .bio-image, .image {
+  .bio-image,
+  .image {
     grid-area: img;
     max-height: 70vh;
   }
-  .bio-text, .text {
+  .bio-text,
+  .text {
     grid-area: text;
     text-align: left;
-    h2, p {
+    h2,
+    p {
       margin-bottom: $med-margin;
     }
   }
@@ -434,24 +449,24 @@ figure {
   // grid-template-areas: "head";
   display: flex;
   flex-wrap: wrap;
-// .about-photo-container {
-//   grid-area: about-photo;
-//   border-radius: $med-margin;
-//   display: flex;
-//   justify-content: center;
-//   .about-photo {
-//     object-fit: cover;
-//     overflow: hidden;
-//     width: 100%;
-//     max-height: 50vh;
-//   }
-.head {
-  margin-bottom: $med-margin;
-  width: 100%;
-}
-// .testimonial-group{  display: flex;
-//   flex-wrap: nowrap;
-// }
+  // .about-photo-container {
+  //   grid-area: about-photo;
+  //   border-radius: $med-margin;
+  //   display: flex;
+  //   justify-content: center;
+  //   .about-photo {
+  //     object-fit: cover;
+  //     overflow: hidden;
+  //     width: 100%;
+  //     max-height: 50vh;
+  //   }
+  .head {
+    margin-bottom: $med-margin;
+    width: 100%;
+  }
+  // .testimonial-group{  display: flex;
+  //   flex-wrap: nowrap;
+  // }
 }
 
 #about-main {
@@ -542,20 +557,6 @@ figure {
   margin-bottom: $big-margin;
 }
 
-.single-testimonial {
-  padding: $med-margin;
-  margin-bottom: $big-margin;
-  border-radius: $med-margin;
-
-  p, h2 {
-    margin-bottom: $med-margin;
-  }
-}
-
-.italics {
-  font-style: italic;
-}
-
 // ------------------------ Contact ------------------------
 
 #contact-content {
@@ -586,9 +587,35 @@ figure {
   }
 }
 
-// 
+//
 .project-grid {
   figure {
     margin-bottom: $med-margin;
+  }
+}
+
+// ------------------------ Contact ------------------------
+
+#project-page {
+  h2 {
+    margin-top: $big-margin;
+    margin-bottom: $med-margin;
+  }
+
+  h4 {
+    margin-bottom: $big-margin;
+  }
+
+  p {
+    margin-bottom: $big-margin;
+  }
+
+  figure {
+    margin-bottom: $med-margin;
+
+    img {
+      object-fit: cover;
+      height: auto;
+    }
   }
 }

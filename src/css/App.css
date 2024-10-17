@@ -28,8 +28,7 @@ body ::-webkit-scrollbar {
   flex-direction: column;
 }
 
-h1,
-h4 {
+h1 {
   font-size: 44px;
 }
 
@@ -45,6 +44,11 @@ h2 {
 .card-body p,
 h3 {
   font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+  font-style: italic;
 }
 
 a,
@@ -138,8 +142,19 @@ button {
   transition: 1s;
 }
 
-#about-page, #project-page {
+#about-page,
+#project-page {
   margin-top: 24px;
+}
+
+.highlight {
+  padding: 12px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+}
+.highlight p,
+.highlight h2 {
+  margin-bottom: 12px;
 }
 
 nav,
@@ -219,7 +234,7 @@ figure {
   justify-content: center;
 }
 figure img {
-  border-radius: 6px;
+  border-radius: 12px;
   overflow: hidden;
   width: 100%;
   max-height: 70vh;
@@ -280,25 +295,40 @@ figure img {
   flex-wrap: wrap;
 }
 
-#Bio, #Testimonials {
+#Bio,
+#Testimonials {
   display: grid;
   grid-template-areas: "img" "text";
   gap: 12px;
   margin-bottom: 24px;
   border-radius: 12px;
 }
-#Bio .bio-image, #Bio .image, #Testimonials .bio-image, #Testimonials .image {
+#Bio .bio-image,
+#Bio .image,
+#Testimonials .bio-image,
+#Testimonials .image {
   grid-area: img;
   max-height: 70vh;
 }
-#Bio .bio-text, #Bio .text, #Testimonials .bio-text, #Testimonials .text {
+#Bio .bio-text,
+#Bio .text,
+#Testimonials .bio-text,
+#Testimonials .text {
   grid-area: text;
   text-align: left;
 }
-#Bio .bio-text h2, #Bio .bio-text p, #Bio .text h2, #Bio .text p, #Testimonials .bio-text h2, #Testimonials .bio-text p, #Testimonials .text h2, #Testimonials .text p {
+#Bio .bio-text h2,
+#Bio .bio-text p,
+#Bio .text h2,
+#Bio .text p,
+#Testimonials .bio-text h2,
+#Testimonials .bio-text p,
+#Testimonials .text h2,
+#Testimonials .text p {
   margin-bottom: 12px;
 }
-#Bio .head, #Testimonials .head {
+#Bio .head,
+#Testimonials .head {
   margin-bottom: 12px;
   width: 100%;
 }
@@ -350,19 +380,6 @@ figure img {
   margin-bottom: 24px;
 }
 
-.single-testimonial {
-  padding: 12px;
-  margin-bottom: 24px;
-  border-radius: 12px;
-}
-.single-testimonial p, .single-testimonial h2 {
-  margin-bottom: 12px;
-}
-
-.italics {
-  font-style: italic;
-}
-
 #contact-content {
   display: flex;
   flex-direction: column;
@@ -389,13 +406,35 @@ figure img {
   margin-bottom: 12px;
 }
 
+#project-page h2 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+#project-page h4 {
+  margin-bottom: 24px;
+}
+#project-page p {
+  margin-bottom: 24px;
+}
+#project-page figure {
+  margin-bottom: 12px;
+}
+#project-page figure img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: auto;
+}
+
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 72px;
   }
-  h3,
-  h2 {
+  h2,
+  h3 {
     font-size: 24px;
+  }
+  h4 {
+    font-size: 18px;
   }
   a,
   p,

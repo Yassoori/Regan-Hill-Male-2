@@ -61,7 +61,7 @@ const Home = () => {
       <div className="full-container" id="home-page">
         <div className="main-content grid-container"></div>
         {/* {loading ? <Loading /> : <MainPosts mainPosts={mainPosts} />} */}
-        <div className="placeholder">Home</div>
+        <p>home</p>
       </div>
     </>
   );

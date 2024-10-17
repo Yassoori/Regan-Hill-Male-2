@@ -7,38 +7,33 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Links from "./Links";
 
-import 'aos/dist/aos.css';
-import AOS from 'aos';
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 function App() {
-
-  const {
-    bgColor,
-    headingFont,
-    subFont,
-    bodyFont,
-    fontColor,
-  } = useCustomizer();
+  const { backgroundColor, headingFont, subFont, bodyFont, fontColor, fontColor2, accentColor } =
+    useCustomizer();
 
   useEffect(() => {
     const applyStyles = async () => {
-
       const styles = document.getElementById("dynamicStyles");
       styles.innerHTML = `
       h1, h4 { font-family: ${headingFont}, serif; }
       h2, h3, .card-body p { font-family: ${subFont}, serif; }
       p, li, a, input, textarea, button { font-family: ${bodyFont}, sans-serif; }
-      input, textarea { border: ${fontColor} 1px solid; }
-      body, nav, .card-text { background: #${bgColor}; color: ${fontColor}}
-      a, button, .inquire { color: ${fontColor}; }
-      `
+      body, nav, .card-text, .client-logo { background-color: #${backgroundColor}; color: ${fontColor}}
+      a, button, .inquire, .social-media-a { color: ${fontColor}; }
+      input, textarea { border: ${accentColor} 1px solid; }
+      .nav-links .nav-button.active, .filter a.selected, .nav-links .nav-button:hover, .filter a:hover, .regular-button { background-color: ${accentColor}; color: ${fontColor2}; }
+      .single-testimonial { background-color: ${accentColor}; color: ${fontColor2} },
+      .head { border-bottom: ${accentColor} 2px solid; }
+      `;
     };
 
     applyStyles();
+  }, [backgroundColor, headingFont, subFont, bodyFont, fontColor, fontColor2, accentColor]);
 
-  }, [bgColor, headingFont, subFont, bodyFont, fontColor]);
-
-  // console.log(bgColor, headingFont, subFont, bodyFont, fontColor);
+  console.log(backgroundColor, headingFont, subFont, bodyFont, fontColor,  fontColor2, accentColor);
 
   useEffect(() => {
     AOS.init({

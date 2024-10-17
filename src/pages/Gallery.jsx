@@ -12,8 +12,7 @@ const Gallery = () => {
   const [filteredProjects, setFilteredProjects] = useState([]);
   const [filter, setFilter] = useState(null);
   // const [type, setType] = useState(null);
-  // const [typeDescription, setTypeDescription] = useState(null);
-  const [categories, setCategories] = useState([]); // Store category data
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     axios
@@ -24,14 +23,12 @@ const Gallery = () => {
       })
       .catch((err) => console.log(err));
 
-    // Fetch category data
     axios
       .get(`${baseUrl}/wp-json/wp/v2/categories`)
       .then((res) => setCategories(res.data))
       .catch((err) => console.log(err));
   }, [baseUrl]);
 
-  // Filter projects when filter changes
   useEffect(() => {
     if (!filter) {
       setFilteredProjects(projects);
@@ -49,42 +46,8 @@ const Gallery = () => {
   const handleFilterClick = (selectedFilter) => {
     if (filter === selectedFilter) {
       setFilter(null);
-      // setType(null);
-      // setTypeDescription(null);
     } else {
       setFilter(selectedFilter);
-
-      // // Set type and typedescription  based on the selected filter
-      // switch (selectedFilter) {
-      //   // case "All":
-      //   //   setFilter(null);
-      //   //   setSeries(null);
-      //   //   setTypeDescription(null);
-      //   //   break;
-      //   case "Mural":
-      //     setType("Mural");
-      //     setTypeDescription("Mural");
-      //     break;
-      //   case "Painting":
-      //     setType("Painting");
-      //     setTypeDescription("Painting");
-      //     break;
-      //   case "Digital":
-      //     setType("Digital");
-      //     setTypeDescription("Digital Artworks");
-      //     break;
-      //   case "School":
-      //     setType("School");
-      //     setTypeDescription("Murals for Schools");
-      //     break;
-      //   case "Psychedelic":
-      //     setType("Psychedelic");
-      //     setTypeDescription("Murals for Hippies");
-      //     break;
-      //   default:
-      //     setType(null);
-      //     setTypeDescription(null);
-      // }
     }
   };
 
@@ -164,71 +127,18 @@ const Gallery = () => {
           {categories
             .filter((category) => category.id !== 1) // Exclude "Uncategorized"
             .map((category) => (
-            <a
-              key={category.id}
-              onClick={() => handleFilterClick(category.name)}
-              className={`filter-button ${
-                filter === category.name ? "selected" : ""
-              }`}
-            >
-              {category.name}
-            </a>
-          ))}
+              <a
+                key={category.id}
+                onClick={() => handleFilterClick(category.name)}
+                className={`filter-button ${
+                  filter === category.name ? "selected" : ""
+                }`}
+              >
+                {category.name}
+              </a>
+            ))}
         </div>
 
-          {/* <a
-            onClick={() => handleFilterClick("All")}
-            id="filter-all"
-            className={`filter-button ${filter === null ? "selected" : ""}`}
-          >
-            All
-          </a> */}
-
-          {/* <a
-            onClick={() => handleFilterClick("Mural")}
-            id="filter-mural"
-            className={`filter-button ${filter === "Mural" ? "selected" : ""}`}
-          >
-            Murals
-          </a>
-          <a
-            onClick={() => handleFilterClick("Painting")}
-            id="filter-painting"
-            className={`filter-button ${
-              filter === "Painting" ? "selected" : ""
-            }`}
-          >
-            Painting
-          </a>
-          <a
-            onClick={() => handleFilterClick("Digital")}
-            id="filter-digital"
-            className={`filter-button ${
-              filter === "Digital" ? "selected" : ""
-            }`}
-          >
-            Digital
-          </a> */}
-
-          {/* <a
-            onClick={() => handleFilterClick("School")}
-            id="filter-schools"
-            className={`filter-button ${
-              filter === "Schools" ? "selected" : ""
-            }`}
-          >
-            Schools
-          </a>
-          <a
-            onClick={() => handleFilterClick("Psychedelic")}
-            id="filter-psychedelic"
-            className={`filter-button ${
-              filter === "Psychedelic" ? "selected" : ""
-            }`}
-          >
-            Psychedelic
-          </a> 
-        </div> */}
         <div className="main-content-container grid-container gallery-grid">
           {loading ? (
             <Loading />

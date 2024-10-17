@@ -20,20 +20,6 @@ h3 {
   font-size: $mob-sub-size;
 }
 
-h4 {
-  position: absolute;
-  top: 8px;
-}
-
-p,
-li,
-a,
-input,
-textarea,
-button {
-  font-family: "Montserrat", sans-serif;
-}
-
 a,
 p,
 div,
@@ -44,8 +30,11 @@ textarea {
 }
 
 #footer p,
-#footer a,
-#footer {
+#footer a {
+  font-size: $mob-fine-size;
+}
+
+#social-media-icons a {
   font-size: $mob-body-size;
 }
 
@@ -54,7 +43,7 @@ textarea,
 button,
 .regular-button {
   width: 100%;
-  border: none;
+  // border: none;
   border-radius: $small-margin;
   padding: $med-margin;
   text-align: start;
@@ -73,8 +62,8 @@ button {
 }
 
 .regular-button {
-  background: $card-dark;
-  color: $text-light;
+  // background: $card-dark;
+  // color: $text-light;
   text-align: center;
 }
 .regular-button:hover {
@@ -86,11 +75,22 @@ button {
   transition: 0.2s;
 }
 
-figure {
-  img {
-    border-radius: $med-margin;
+.back-button-container {
+  margin: $med-margin auto;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+
+  .back-button {
+    width: fit-content;
   }
 }
+
+// figure {
+//   img {
+//     border-radius: $med-margin;
+//   }
+// }
 
 .full-container {
   padding: $small-margin;
@@ -104,7 +104,7 @@ figure {
   // min-height: calc(100vh - 115px);
   // opacity: 0;
   // transition: 0.4s;
-  width: 100%;
+  // width: 100%;
 }
 
 .loader {
@@ -121,9 +121,14 @@ figure {
   transition: 1s;
 }
 
+#about-page, #project-page {
+margin-top: $big-margin;
+}
+
 // ------------------------ Header ------------------------
 
-nav {
+nav,
+.filter {
   margin: 6px;
   display: flex;
   margin-bottom: 12px;
@@ -136,113 +141,94 @@ nav {
     a {
       display: flex;
       align-items: center;
-    }
-    img {
-      align-items: center;
-      max-width: 20vw;
-      max-height: 20vh;
+      img {
+        align-items: center;
+        max-width: 20vw;
+        max-height: 20vh;
+      }
     }
   }
 
   .nav-links {
     margin-bottom: $med-margin;
-
     a {
       margin: $small-margin;
       font-size: $mob-sub-size;
     }
   }
-
-  .left-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-
-    #cart,
-    #hamburger-container {
-      button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.4s;
-        width: 30px;
-        padding: $small-margin;
-        margin-left: $small-margin;
-        margin-right: $small-margin;
-      }
-    }
-  }
 }
 
-#desktop-nav-menu {
-  display: none;
-}
+// .nav-links {
+//   display: none;
+// }
 
-#desktop-nav-menu .nav-button,
+.nav-links .nav-button,
 .filter a {
   font-size: $body-size;
-  padding: $small-margin;
-  margin: auto;
-  margin-bottom: $small-margin + 4px;
+  padding: $med-margin;
+  // margin: auto;
+  // margin-bottom: $small-margin + 4px;
+  margin-bottom: $small-margin;
+  border-radius: $big-margin;
 }
 
-#desktop-nav-menu .nav-button:hover,
+.nav-links .nav-button:hover,
 .filter a:hover {
-  border-bottom: 4px solid $text-dark;
+  // border-bottom: 4px solid $text-dark;
   transition: 0.2s ease;
-  margin-bottom: $small-margin;
+  // margin-bottom: $small-margin;
 }
 
-#desktop-nav-menu .nav-button.active,
-.filter a.selected {
-  border-bottom: 4px solid $text-dark;
-  margin-bottom: $small-margin;
-}
+// .nav-links .nav-button.active,
+// .filter a.selected {
+//   // border-bottom: 4px solid $text-dark;
+//   margin-bottom: $small-margin;
+// }
 
-.mobile-menu-container {
-  display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  position: fixed;
-  z-index: 1;
-  overflow: hidden;
-  // height: 100vh;
-  height: 0;
-  width: 100%;
-  background: $bg-light;
+// .mobile-menu-container {
+//   display: flex;
+//   // flex-direction: column;
+//   // justify-content: center;
+//   // align-items: center;
+//   position: fixed;
+//   z-index: 1;
+//   overflow: hidden;
+//   // height: 100vh;
+//   height: 0;
+//   width: 100%;
+//   background: $bg-light;
 
-  opacity: 0;
-  transition: 0.4s ease;
+//   opacity: 0;
+//   transition: 0.4s ease;
 
-  #mobile-nav-menu {
-    position: absolute;
-    top: 20%;
-    right: 50%;
-    left: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+//   #mobile-nav-menu {
+//     position: absolute;
+//     top: 20%;
+//     right: 50%;
+//     left: 50%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
 
-  button {
-    margin: $med-margin;
-    width: fit-content;
-  }
+//   button {
+//     margin: $med-margin;
+//     width: fit-content;
+//   }
 
-  #close-nav-menu {
-    position: absolute;
-    top: -8px;
-    right: 1px;
-    justify-content: center;
-  }
-}
+//   #close-nav-menu {
+//     position: absolute;
+//     top: -8px;
+//     right: 1px;
+//     justify-content: center;
+//   }
+// }
 
-.menu-open {
-  opacity: 1;
-  transition: 0.4s ease;
-  height: 100vh;
-}
+// .menu-open {
+//   opacity: 1;
+//   transition: 0.4s ease;
+//   height: 100vh;
+// }
 
 .no-scroll {
   overflow: hidden;
@@ -250,6 +236,14 @@ nav {
   width: 100%;
   height: 100%;
 }
+
+// .nav-links .nav-button.active,
+// .filter a.selected,
+// .nav-links .nav-button:hover,
+// .filter a:hover,
+// .regular-button {
+//   border-radius: $big-margin;
+// }
 
 // ------------------------ Footer ------------------------
 
@@ -272,10 +266,29 @@ nav {
   }
 
   #social-media-icons {
-    margin: $med-margin;
+    margin: $big-margin 0;
     a {
-      margin: 0 $med-margin;
+      margin: 0 $big-margin;
     }
+  }
+}
+
+// ------------------------ Images ------------------------
+
+figure {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // padding: 12px;
+
+  img{
+    border-radius: 6px;
+    // -o-object-fit: contain;
+    // object-fit: contain;
+    overflow: hidden;
+    width: 100%;
+    // height: 100%;
+    max-height: 70vh;
   }
 }
 
@@ -391,13 +404,36 @@ nav {
 //   }
 // }
 
-#Bio {
+#Bio, #Testimonials {
   display: grid;
-  grid-template-areas: "about-photo" "main";
-  text-align: center;
-  margin: $big-margin;
-  // margin: 0 auto;
+  grid-template-areas: "img" "text";
+  // grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: $med-margin;
+  // text-align: center;
+  margin-bottom: $big-margin;
+  border-radius: $med-margin;
+
+  .bio-image, .image {
+    grid-area: img;
+    max-height: 70vh;
+  }
+  .bio-text, .text {
+    grid-area: text;
+    text-align: left;
+    h2, p {
+      margin-bottom: $med-margin;
+    }
+  }
+  .head {
+    margin-bottom: $med-margin;
+    width: 100%;
+  }
 }
+
+#Testimonials {
+  // grid-template-areas: "head";
+  display: flex;
+  flex-wrap: wrap;
 // .about-photo-container {
 //   grid-area: about-photo;
 //   border-radius: $med-margin;
@@ -409,7 +445,14 @@ nav {
 //     width: 100%;
 //     max-height: 50vh;
 //   }
+.head {
+  margin-bottom: $med-margin;
+  width: 100%;
+}
+// .testimonial-group{  display: flex;
+//   flex-wrap: nowrap;
 // }
+}
 
 #about-main {
   grid-area: main;
@@ -457,22 +500,22 @@ nav {
 //   }
 // }
 
-#Testimonials {
-  // width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  h2 {
-    width: 100%;
-  }
-}
+// #Testimonials {
+//   // width: 100%;
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: center;
+//   justify-content: center;
+//   h2 {
+//     width: 100%;
+//   }
+// }
 
 .client-logo {
   width: fit-content;
   // margin: $small-margin;
-  background-color: #ffffff;
-  border-radius: $med-margin;
+  // background-color: #ffffff;
+  // border-radius: $med-margin;
   padding: $med-margin;
   img {
     height: 40px;
@@ -497,6 +540,20 @@ nav {
   width: 100%;
   padding: $med-margin;
   margin-bottom: $big-margin;
+}
+
+.single-testimonial {
+  padding: $med-margin;
+  margin-bottom: $big-margin;
+  border-radius: $med-margin;
+
+  p, h2 {
+    margin-bottom: $med-margin;
+  }
+}
+
+.italics {
+  font-style: italic;
 }
 
 // ------------------------ Contact ------------------------
@@ -526,5 +583,12 @@ nav {
     // #submit-button {
 
     // }
+  }
+}
+
+// 
+.project-grid {
+  figure {
+    margin-bottom: $med-margin;
   }
 }

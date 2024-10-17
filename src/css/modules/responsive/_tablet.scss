@@ -106,6 +106,14 @@
         display: none;
       }
     }
+
+    #logo {
+      a {
+        img {
+          max-height: 20vh;
+        }
+      }
+    }
   }
 
   .nav-links .nav-button,
@@ -117,13 +125,7 @@
     display: none;
   }
 
-  #logo {
-    a {
-      img {
-        max-height: 20vh;
-      }
-    }
-  }
+
 
   // ------------------------ Footer ------------------------
 

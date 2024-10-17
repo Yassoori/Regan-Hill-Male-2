@@ -532,15 +532,15 @@ figure img {
   nav #hamburger-container button, #footer #hamburger-container button, .filter #hamburger-container button {
     display: none;
   }
+  nav #logo a img, #footer #logo a img, .filter #logo a img {
+    max-height: 20vh;
+  }
   .nav-links .nav-button,
   .filter a {
     width: 150px;
   }
   #mobile-menu-container {
     display: none;
-  }
-  #logo a img {
-    max-height: 20vh;
   }
   #footer {
     bottom: 0;

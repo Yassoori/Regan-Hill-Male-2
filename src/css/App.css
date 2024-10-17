@@ -156,6 +156,36 @@ button {
   margin-bottom: 12px;
 }
 
+#landing {
+  padding: 24px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+#landing .landing-logo {
+  display: flex;
+  height: 50vh;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-bottom: 24px;
+}
+#landing h1,
+#landing p {
+  margin-bottom: 24px;
+}
+#landing .landing-button-container {
+  display: flex;
+}
+#landing .landing-button-container .landing-button {
+  margin: 12px;
+  border-radius: 24px;
+  padding: 12px;
+}
+
 nav,
 .filter {
   margin: 6px;
@@ -175,7 +205,7 @@ nav #logo a img,
 .filter #logo a img {
   align-items: center;
   max-width: 20vw;
-  max-height: 20vh;
+  max-height: 12vh;
 }
 nav .nav-links,
 .filter .nav-links {
@@ -508,6 +538,9 @@ figure img {
   }
   #mobile-menu-container {
     display: none;
+  }
+  #logo a img {
+    max-height: 20vh;
   }
   #footer {
     bottom: 0;

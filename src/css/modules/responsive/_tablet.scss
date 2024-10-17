@@ -112,6 +112,14 @@
     display: none;
   }
 
+  #logo {
+    a {
+      img {
+        max-height: 20vh;
+      }
+    }
+  }
+
   // ------------------------ Footer ------------------------
 
   #footer {

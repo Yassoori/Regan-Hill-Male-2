@@ -135,6 +135,41 @@ button {
   }
 }
 
+// ------------------------ Landing ------------------------
+
+#landing {
+  padding: $big-margin;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+
+  .landing-logo {
+    display: flex;
+    height: 50vh;
+    object-fit: contain;
+    margin-bottom: $big-margin;
+  }
+
+  h1,
+  p {
+    margin-bottom: $big-margin;
+  }
+
+  .landing-button-container {
+    display: flex;
+
+    .landing-button {
+      margin: $med-margin;
+      border-radius: $big-margin;
+      padding: $med-margin;
+    }
+  }
+}
+
 // ------------------------ Header ------------------------
 
 nav,
@@ -154,7 +189,7 @@ nav,
       img {
         align-items: center;
         max-width: 20vw;
-        max-height: 20vh;
+        max-height: 12vh;
       }
     }
   }
@@ -319,7 +354,6 @@ figure {
   // display: grid;
   // grid-template-columns: 1fr;
   // gap: 1em;
-
 }
 
 // ------------------------ Cards ------------------------

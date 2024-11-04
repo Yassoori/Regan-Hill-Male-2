@@ -7,47 +7,9 @@ import Loading from "../components/Loading";
 const baseUrl = import.meta.env.VITE_WP_BASEURL;
 
 const Home = () => {
-  // const [mainPosts, setMainPosts] = useState(null);
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`${apiUrl}/mainposts`)
-  //     .then((res) => {
-  //       setMainPosts(res.data)
-  //       setLanding(res.data);
-  //       setLoading(false);
-  //       // console.log(res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }, [apiUrl]);
-
-  // if (loading) {
-  //   return (
-  //     <>
-  //       <Loading />
-  //     </>
-  //   );
-  // }
-
-  // const MainPosts = ({ mainPosts }) => {
-  //   const mappedMainPosts = mainPosts.map((mainPost, index) => {
-  //     function getFeaturedImage(mainPost, index) {
-  //       if (
-  //         mainPost &&
-  //         mainPost._embedded &&
-  //         mainPost._embedded["wp:featuredmedia"] &&
-  //         mainPost._embedded["wp:featuredmedia"][0].source_url
-  //       ) {
-  //         return mainPost._embedded["wp:featuredmedia"][0].source_url;
-  //       } else {
-  //         return null;
-  //       }
-  //     }
-  //   })
-  // }
-
   const [logoUrl, setLogoUrl] = useState("");
+  const [landingPost, setLandingPost] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchNavLogo = async () => {
@@ -69,6 +31,36 @@ const Home = () => {
     fetchNavLogo();
   }, []);
 
+  useEffect(() => {
+    axios
+      .get(`${baseUrl}/wp-json/wp/v2/landing-post`)
+      .then((res) => {
+        setLandingPost(res.data);
+        setLoading(false);
+        console.log(res);
+      })
+      .catch((err) => console.log(err));
+  }, [baseUrl]);
+
+  const LandingPost = ({ landingPosts }) => {
+    if (!landingPosts) {
+      return null;
+    }
+
+    const mappedLandingPosts = landingPosts.map((landing, index) => {
+      console.log(landing.content.rendered);
+      return (
+        <div
+          className="landing-text"
+          id={landing.title.rendered}
+          key={index}
+          dangerouslySetInnerHTML={{ __html: landing.content.rendered }}
+        />
+      );
+    });
+    return <>{mappedLandingPosts}</>;
+  };
+
   return (
     <>
       <Helmet>
@@ -82,22 +74,20 @@ const Home = () => {
       </Helmet>
       <div className="full-container" id="home-page">
         <div className="main-content-container" id="landing">
-        {/* {loading ? <Loading /> : <MainPosts mainPosts={mainPosts} />} */}
-        <img src={logoUrl} alt="Regan Hill-Male" className="landing-logo" />
-        <h1>Kia Ora, I'm Regan</h1>
-        <p>I'm an artist, and mostly paint murals</p>
-        <div className="landing-button-container">
-          <Link
-            to="/gallery" className="landing-button"
-          >
-            View Artwork
-          </Link>
-          <Link
-            to="/contact" className="landing-button landing-button-contact"
-          >
-            Inquire
-          </Link>
-        </div>
+          <img src={logoUrl} alt="Regan Hill-Male" className="landing-logo" />
+          {loading ? <Loading /> : <LandingPost landingPosts={landingPost} />}
+          {/* <LandingPost landingPosts={landingPost} /> */}
+          <div className="landing-button-container">
+            <Link to="/gallery" className="landing-button">
+              View Artwork
+            </Link>
+            <Link
+              to="/contact"
+              className="landing-button landing-button-contact"
+            >
+              Inquire
+            </Link>
+          </div>
         </div>
       </div>
     </>

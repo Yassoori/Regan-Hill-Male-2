@@ -173,8 +173,13 @@ button {
      object-fit: contain;
   margin-bottom: 24px;
 }
-#landing h1,
-#landing p {
+#landing .landing-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#landing .landing-text h2,
+#landing .landing-text p {
   margin-bottom: 24px;
 }
 #landing .landing-button-container {
@@ -415,6 +420,11 @@ figure img {
   text-align: center;
   align-items: center;
   justify-content: flex-start;
+}
+#contact-content .contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #contact-content h2 {
   margin-bottom: 48px;

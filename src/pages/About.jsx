@@ -42,7 +42,7 @@ const About = () => {
     <>
       <Helmet>
         <title>About</title>
-        <meta name="description" content="This is the about post" />
+        <meta name="description" content="This is the about page" />
         <meta name="keywords" content="about, artist biography, exhibitions" />
         Additional meta tags, e.g., social media share tags for Twitter, etc.
         <meta

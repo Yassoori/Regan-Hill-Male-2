@@ -154,10 +154,15 @@ button {
     margin-bottom: $big-margin;
   }
 
-  h1,
-  p {
-    margin-bottom: $big-margin;
-  }
+  .landing-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2,
+    p {
+      margin-bottom: $big-margin;
+    }
+  } 
 
   .landing-button-container {
     display: flex;
@@ -601,6 +606,13 @@ figure {
   text-align: center;
   align-items: center;
   justify-content: flex-start;
+
+  .contact-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  } 
+  
   h2 {
     margin-bottom: $very-big-margin;
   }

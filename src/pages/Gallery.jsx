@@ -84,10 +84,10 @@ const Gallery = () => {
           className="project-card"
           id={`${project.title.rendered}-card`}
           to={`/gallery/${project.slug}`}
-          data-aos="zoom-in-down"
-          data-aos-easing="liner"
-          data-aos-offset="50"
-          data-set-delay="1000"
+          // data-aos="zoom-in-down"
+          // data-aos-easing="liner"
+          // data-aos-offset="50"
+          // data-set-delay="1000"
         >
           {/* <div className="card-text">
             <h3 className="card-heading">{project.title.rendered}</h3>

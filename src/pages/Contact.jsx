@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const formEndpoint = import.meta.env.VITE_APP_WP_API_FORM_ENDPOINT;
-
-// console.log(formEndpoint);
+const baseUrl = import.meta.env.VITE_WP_BASEURL;
 
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -20,7 +19,6 @@ const ContactForm = () => {
     contactForm.append("your-email", email);
     contactForm.append("your-subject", subject);
     contactForm.append("your-message", message);
-    // console.log();
 
     axios
       .post(formEndpoint, contactForm, {
@@ -28,12 +26,11 @@ const ContactForm = () => {
           "Content-Type": "application/x-www-form-urlencoded",
         },
       })
-      .then((response) => {
-        // console.log(response);
+      .then(() => {
         setSubmitted(true);
       })
       .catch((error) => {
-        console.log(error);
+        console.error("Form submission error:", error);
         setError(true);
       });
   };
@@ -57,66 +54,84 @@ const ContactForm = () => {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit} method="POST">
-        {/* <div> */}
-          <input
-            type="text"
-            name="name"
-            onChange={(event) => setName(event.target.value)}
-            value={name}
-            required
-            placeholder="Your name"
-          />
-        {/* </div> */}
-        {/* <div> */}
-          <input
-            type="email"
-            name="email"
-            onChange={(event) => setEmail(event.target.value)}
-            value={email}
-            required
-            placeholder="Your email"
-          />
-        {/* </div> */}
-        {/* <div> */}
-          <input
-            type="subject"
-            name="subject"
-            onChange={(event) => setSubject(event.target.value)}
-            value={subject}
-            required
-            placeholder="Your subject"
-          />
-        {/* </div> */}
-        {/* <div> */}
-          <textarea
-            type="message"
-            name="message"
-            onChange={(event) => setMessage(event.target.value)}
-            value={message}
-            required
-            placeholder="Your message"
-          />
-        {/* </div> */}
-        {/* <div> */}
-          <button id="submit-button" className="regular-button" type="submit">
-            Send
-          </button>
-        {/* </div> */}
-      </form>
-    </>
+    <form onSubmit={handleSubmit} method="POST">
+      <input
+        type="text"
+        name="name"
+        onChange={(event) => setName(event.target.value)}
+        value={name}
+        required
+        placeholder="Your name"
+      />
+      <input
+        type="email"
+        name="email"
+        onChange={(event) => setEmail(event.target.value)}
+        value={email}
+        required
+        placeholder="Your email"
+      />
+      <input
+        type="text"
+        name="subject"
+        onChange={(event) => setSubject(event.target.value)}
+        value={subject}
+        required
+        placeholder="Your subject"
+      />
+      <textarea
+        name="message"
+        onChange={(event) => setMessage(event.target.value)}
+        value={message}
+        required
+        placeholder="Your message"
+      />
+      <button id="submit-button" className="regular-button" type="submit">
+        Send
+      </button>
+    </form>
   );
 };
 
 const Contact = () => {
+  const [contactPost, setContactPost] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get(`${baseUrl}/wp-json/wp/v2/contact-post`)
+      .then((res) => {
+        setContactPost(res.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching contact post:", err);
+      });
+  }, []);
+
+  const ContactPost = ({ contactPosts }) => {
+    if (!contactPosts) return null;
+
+    return (
+      <>
+        {contactPosts.map((contact, index) => (
+          <div
+            className="contact-section"
+            id={contact.title.rendered}
+            key={index}
+            dangerouslySetInnerHTML={{ __html: contact.content.rendered }}
+          />
+        ))}
+      </>
+    );
+  };
+  
   return (
     <div id="contact-page" className="full-container">
-      <div id="" className="main-content-container">
+      <div className="main-content-container">
         <div id="contact-content">
-        <p className="contact-sub">Looking to commission a Mural, or grab a Coffee?</p>
-        <h2 className="contact-heading">Let's chat.</h2>
-        <ContactForm />
+          <ContactPost contactPosts={contactPost} />
+          <ContactForm />
         </div>
       </div>
     </div>

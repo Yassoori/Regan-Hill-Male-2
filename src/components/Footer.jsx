@@ -14,13 +14,13 @@ if (location.pathname === "/") {
     <div id="footer">
       <div id="social-media-icons">
         <a href="https://www.instagram.com/regan.hillmale">
-          <FontAwesomeIcon icon={faInstagram} size="lg"  className="social-media-a"/>
+          <FontAwesomeIcon icon={faInstagram} size="lg" className="social-media-a"/>
         </a>
         <a href="https://www.facebook.com/reganhillmaleart/">
-          <FontAwesomeIcon icon={faFacebook} size="lg"  className="social-media-a"/>
+          <FontAwesomeIcon icon={faFacebook} size="lg" className="social-media-a"/>
         </a>
         <a href="mailto: contact@reganhillmale.com">
-          <FontAwesomeIcon icon={faEnvelope} size="lg"  className="social-media-a"/>
+          <FontAwesomeIcon icon={faEnvelope} size="lg" className="social-media-a"/>
         </a>
       </div>
       <p className="contact-info">Phone: +64 21 0285 3849</p>

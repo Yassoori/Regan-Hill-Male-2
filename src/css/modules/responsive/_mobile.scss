@@ -108,6 +108,11 @@ button {
 .loader {
   width: 100%;
   height: 90vh;
+
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  right: 50%;
 }
 
 #home-page,
@@ -612,7 +617,7 @@ figure {
     flex-direction: column;
     align-items: center;
   } 
-  
+
   h2 {
     margin-bottom: $very-big-margin;
   }

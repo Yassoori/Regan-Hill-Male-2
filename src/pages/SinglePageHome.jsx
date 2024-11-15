@@ -121,9 +121,18 @@ const SinglePageHome = () => {
                   className="social-media-a"
                 />
               </a>
+              {/* <p className="contact-info">+64 21 0285 3849</p> */}
             </div>
           </div>
         </div>
+        <div id="footer-text">
+              {/* <p className="contact-info">+64 21 0285 3849</p> */}
+              <p className="rights">© 2024 Regan Hill Male.</p>
+              <p className="rights">All Rights Reserved.</p>
+              <a className="rights" href="https://www.yassersaeed.com/">
+                Site by Yasser Saeed.
+              </a>
+            </div>
       </div>
     </>
   );

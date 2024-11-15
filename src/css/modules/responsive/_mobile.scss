@@ -98,7 +98,9 @@ button {
   justify-content: flex-start;
   flex-direction: column;
   flex-grow: 1;
-  margin: auto;
+  // margin: auto;
+  padding: $big-margin;
+  min-height: 100vh;
   // min-height: calc(100vh - 115px);
   // opacity: 0;
   // transition: 0.4s;
@@ -143,14 +145,15 @@ button {
 // ------------------------ Landing ------------------------
 
 #landing {
-  padding: $big-margin;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex-grow: 1;
   max-width: 100%;
-  margin-left: 0%;
-  margin-right: 0%;
+  // min-height: 100vh;
+  margin: 0;
+
 
   .landing-logo {
     display: flex;
@@ -197,7 +200,8 @@ button {
   p {
     display: flex;
     text-align: center;
-    margin-bottom: $med-margin;
+    margin-top: $med-margin;
+    justify-content: center;
   }
 
   #social-media-icons {
@@ -205,6 +209,29 @@ button {
     a {
       margin: 0 $big-margin;
     }
+  }
+}
+
+#footer-text {
+  display: flex;
+  flex-direction: row;
+  // margin: auto;
+  margin-top: $med-margin;
+  // align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+
+  width: 100%;
+  // position: fixed;
+  // bottom: 0;
+  // bottom: $big-margin;
+
+  .rights {
+    // display: flex;
+    // flex-direction: column;
+    margin: 0 $small-margin;
+    font-size: $mob-fine-size;
+    text-align: center;
   }
 }
 

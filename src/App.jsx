@@ -3,7 +3,7 @@ import { HashRouter } from "react-router-dom";
 import "./css/App.css";
 import useCustomizer from "./hooks/useCustomizer.jsx";
 
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Links from "./Links";
 
@@ -57,7 +57,7 @@ function App() {
   return (
     <>
       <HashRouter>
-        <Header />
+        {/* <Header /> */}
         <Links />
         <Footer />
       </HashRouter>

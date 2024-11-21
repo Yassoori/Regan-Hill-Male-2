@@ -12,6 +12,9 @@ import {Routes, Route} from 'react-router-dom'
 // import SinglePageHome
 import SinglePageHome from './pages/SinglePageHome'
 
+// import 404 Error
+import PageNotFound from './pages/PageNotFound'
+
 const Links = () => {
   return (
     <Routes>
@@ -23,7 +26,7 @@ const Links = () => {
 
         {/* Single page version of site */}
         <Route exact path='/' element={<SinglePageHome/>}/>
-
+        <Route path='*' element={<PageNotFound/>}/>
     </Routes>
   )
 }

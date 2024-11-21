@@ -141,7 +141,8 @@ button {
 #about-page,
 #contact-page,
 #gallery-page,
-#project-page {
+#project-page,
+#error-page {
   opacity: 1;
   transition: 1s;
 }
@@ -161,7 +162,7 @@ button {
   margin-bottom: 12px;
 }
 
-#landing {
+#landing, #page-not-found, #backend {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -170,26 +171,28 @@ button {
   max-width: 100%;
   margin: 0;
 }
-#landing .landing-logo {
+#landing .landing-logo, #page-not-found .landing-logo, #backend .landing-logo {
   display: flex;
   height: 70vh;
   -o-object-fit: contain;
      object-fit: contain;
   margin-bottom: 24px;
 }
-#landing .landing-text {
+#landing .landing-text, #page-not-found .landing-text, #backend .landing-text {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 #landing .landing-text h2,
-#landing .landing-text p {
+#landing .landing-text p, #page-not-found .landing-text h2,
+#page-not-found .landing-text p, #backend .landing-text h2,
+#backend .landing-text p {
   margin-bottom: 24px;
 }
-#landing .landing-button-container {
+#landing .landing-button-container, #page-not-found .landing-button-container, #backend .landing-button-container {
   display: flex;
 }
-#landing .landing-button-container .landing-button {
+#landing .landing-button-container .landing-button, #page-not-found .landing-button-container .landing-button, #backend .landing-button-container .landing-button {
   margin: 12px;
   border-radius: 24px;
   padding: 12px;

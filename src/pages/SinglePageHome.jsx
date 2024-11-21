@@ -86,8 +86,8 @@ const SinglePageHome = () => {
           <img src={logoUrl} alt="Regan Hill-Male" className="landing-logo" />
           {loading ? <Loading /> : <LandingPost landingPosts={landingPost} />}
           {/* <LandingPost landingPosts={landingPost} /> */}
-          {/* <div className="landing-button-container">
-            <Link to="/gallery" className="landing-button">
+          <div className="landing-button-container">
+            {/* <Link to="/gallery" className="landing-button">
               View Artwork
             </Link>
             <Link
@@ -95,8 +95,14 @@ const SinglePageHome = () => {
               className="landing-button landing-button-contact"
             >
               Inquire
-            </Link>
-          </div> */}
+            </Link> */}
+            <a
+              href="https://reganhillmale.com/regan-hill-male-portfolio"
+              className="landing-button landing-button-contact"
+            >
+              View Portfolio
+            </a>
+          </div>
 
           <div id="home-footer">
             <div id="social-media-icons">

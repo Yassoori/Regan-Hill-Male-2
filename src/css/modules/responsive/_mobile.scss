@@ -121,7 +121,8 @@ button {
 #about-page,
 #contact-page,
 #gallery-page,
-#project-page {
+#project-page,
+#error-page {
   opacity: 1;
   transition: 1s;
 }
@@ -144,7 +145,7 @@ button {
 
 // ------------------------ Landing ------------------------
 
-#landing {
+#landing, #page-not-found, #backend {
   width: 100%;
   display: flex;
   flex-direction: column;

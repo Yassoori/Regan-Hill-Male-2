@@ -137,6 +137,7 @@ button {
 }
 
 #home-page,
+#error-page,
 #about-page,
 #contact-page,
 #gallery-page,
@@ -160,7 +161,7 @@ button {
   margin-bottom: 12px;
 }
 
-#landing {
+#landing, #page-not-found {
   padding: 24px;
   width: 100%;
   display: flex;
@@ -170,26 +171,27 @@ button {
   margin-left: 0%;
   margin-right: 0%;
 }
-#landing .landing-logo {
+#landing .landing-logo, #page-not-found .landing-logo {
   display: flex;
   height: 50vh;
   -o-object-fit: contain;
      object-fit: contain;
   margin-bottom: 24px;
 }
-#landing .landing-text {
+#landing .landing-text, #page-not-found .landing-text {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 #landing .landing-text h2,
-#landing .landing-text p {
+#landing .landing-text p, #page-not-found .landing-text h2,
+#page-not-found .landing-text p {
   margin-bottom: 24px;
 }
-#landing .landing-button-container {
+#landing .landing-button-container, #page-not-found .landing-button-container {
   display: flex;
 }
-#landing .landing-button-container .landing-button {
+#landing .landing-button-container .landing-button, #page-not-found .landing-button-container .landing-button {
   margin: 12px;
   border-radius: 24px;
   padding: 12px;

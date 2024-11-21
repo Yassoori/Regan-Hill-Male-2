@@ -116,6 +116,7 @@ button {
 }
 
 #home-page,
+#error-page,
 #about-page,
 #contact-page,
 #gallery-page,
@@ -142,7 +143,7 @@ button {
 
 // ------------------------ Landing ------------------------
 
-#landing {
+#landing, #page-not-found {
   padding: $big-margin;
   width: 100%;
   display: flex;
